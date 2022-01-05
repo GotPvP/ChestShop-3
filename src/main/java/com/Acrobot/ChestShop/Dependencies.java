@@ -2,6 +2,7 @@ package com.Acrobot.ChestShop;
 
 import com.Acrobot.Breeze.Utils.MaterialUtil;
 import com.Acrobot.ChestShop.Configuration.Properties;
+import com.Acrobot.ChestShop.Listeners.Economy.Plugins.CurrenciesAPIListener;
 import com.Acrobot.ChestShop.Listeners.Economy.Plugins.ReserveListener;
 import com.Acrobot.ChestShop.Listeners.Economy.Plugins.VaultListener;
 import com.Acrobot.ChestShop.Plugins.*;
@@ -70,12 +71,13 @@ public class Dependencies implements Listener {
 
         Listener economy = null;
 
-        if(Bukkit.getPluginManager().getPlugin("Reserve") != null) {
+        if(Bukkit.getPluginManager().getPlugin("CurrenciesAPI") != null) {
+            plugin = "CurrenciesAPI";
+            economy = CurrenciesAPIListener.prepareListener();
+        } else if(Bukkit.getPluginManager().getPlugin("Reserve") != null) {
             plugin = "Reserve";
             economy = ReserveListener.prepareListener();
-        }
-
-        if(Bukkit.getPluginManager().getPlugin("Vault") != null) {
+        } else if(Bukkit.getPluginManager().getPlugin("Vault") != null) {
             plugin = "Vault";
             economy = VaultListener.initializeVault();
         }

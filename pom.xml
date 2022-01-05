@@ -140,6 +140,14 @@
             </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>lynn.lace.currenciesapi</groupId>
+            <artifactId>CurrenciesAPI</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/../OPBlocks/lib/CurrenciesAPI-MultiBridge.jar</systemPath>
+        </dependency>
+
         
         <dependency>
             <groupId>com.herocraftonline.heroes</groupId>
