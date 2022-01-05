@@ -8,6 +8,7 @@ import com.Acrobot.ChestShop.Configuration.Properties;
 import com.Acrobot.ChestShop.Economy.Economy;
 import com.Acrobot.ChestShop.Events.TransactionEvent;
 import com.Acrobot.ChestShop.Utils.ItemUtil;
+import com.opblocks.multibridge.MultiBridgeAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -80,7 +81,8 @@ public class TransactionMessageSender implements Listener {
             rawMessage.sendWithPrefix(player, replacementMap);
         } else if (playerName != null) {
             replacementMap.put("item", ItemUtil.getItemList(event.getStock()));
-            ChestShop.sendBungeeMessage(playerName, rawMessage, replacementMap);
+            //ChestShop.sendBungeeMessage(playerName, rawMessage, replacementMap);
+            MultiBridgeAPI.message(playerName, rawMessage.getTextWithPrefix(null, replacementMap, replacements));
         }
     }
 

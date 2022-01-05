@@ -148,6 +148,14 @@
             <systemPath>${pom.basedir}/../OPBlocks/lib/CurrenciesAPI-MultiBridge.jar</systemPath>
         </dependency>
 
+        <dependency>
+            <groupId>com.opblocks.multibridge</groupId>
+            <artifactId>MultiBridge</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/../OPBlocks/lib/MultiBridge.jar</systemPath>
+        </dependency>
+
         
         <dependency>
             <groupId>com.herocraftonline.heroes</groupId>
